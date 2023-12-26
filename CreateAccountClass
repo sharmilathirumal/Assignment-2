@@ -1,0 +1,47 @@
+/* Online Java Compiler and Editor */
+public class Account{
+       double balance;
+       public Account(){
+           this.balance =0.0;
+       }
+       public Account(double initialBalance){
+           this.balance = initialBalance;
+       }
+       
+        public void Deposit(double amount){
+            if(amount>0){
+                balance +=amount;
+                System.out.println("Deposite successfully completed....");
+                System.out.println("new balance"+" "+balance);
+            }
+            else{
+                System.out.println("please enter valid amount");
+            }
+        }
+        
+        public void Withdraw(double amount){
+            if(balance >0 &&amount<=balance){
+                balance -=amount;
+                System.out.println("Withdraw successfully completed............");
+                System.out.println("balance"+" "+balance);
+            }
+            else{
+                System.out.println("insufficient balance");
+            }
+        }
+        
+        public void DisplayBalance(){
+           System.out.println("current balance is"+" "+balance);
+        }
+    public static void main(String []args){
+       Account account1 = new Account();
+       account1.DisplayBalance();
+       Account account2 = new Account(200.0);
+       account2.DisplayBalance();
+       account1.Deposit(500.0);
+       account2.Withdraw(300);
+       account1.Withdraw(200);
+       account2.Deposit(50);
+       account2.Withdraw(100);
+     }
+}
