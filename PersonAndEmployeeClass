@@ -1,0 +1,23 @@
+/* Online Java Compiler and Editor */
+public class Person{
+       String employeeName;
+       int employeeAge;
+}
+
+public class Employee extends Person{
+    int employeeId;
+    double employeeSalary;
+     public Employee(String name,int age,int id,double salary){
+         super.employeeName =name;
+         super.employeeAge = age;
+         this.employeeId =id;
+         this.employeeSalary = salary;
+     }
+      public static void main(String []args){
+       Employee employee = new Employee("Iyal", 25, 622, 50000.0);
+        System.out.println("Name: " + employeeName);
+        System.out.println("Age: " + employeeAge());
+        System.out.println("Employee ID: " + employeeId());
+        System.out.println("Employee Salary: " + employeeSalary());
+     }
+}
