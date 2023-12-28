@@ -16,8 +16,8 @@ public class Employee extends Person{
       public static void main(String []args){
        Employee employee = new Employee("Iyal", 25, 622, 50000.0);
         System.out.println("Name: " + employeeName);
-        System.out.println("Age: " + employeeAge());
-        System.out.println("Employee ID: " + employeeId());
-        System.out.println("Employee Salary: " + employeeSalary());
+        System.out.println("Age: " + employeeAge);
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Employee Salary: " + employeeSalary);
      }
 }
