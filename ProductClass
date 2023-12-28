@@ -1,0 +1,55 @@
+package assignmentTwo;
+
+import java.util.Scanner;
+public class Product {
+	int pId;
+	double price;
+	int quantity;
+	
+	public Product(int productId,double price,int quantity){
+		this.pId = productId;
+		this.price = price;
+		this.quantity =quantity;
+	}
+	
+}
+class ProductXyz{
+	public static void main(String args[]) {
+		Scanner s = new Scanner(System.in);
+		Product[] products = new Product[5];
+		for(int i=0;i<5;i++) {
+			System.out.println("Enter a product id");
+			int productId = s.nextInt();
+			System.out.println("Enter the price");
+			double price = s.nextDouble();
+			System.out.println("Enter the quantity");
+			int quantity = s.nextInt();
+			products[i] = new Product(productId,price,quantity);
+		}
+		
+		int highestPid = FindHighestPriceProductid(products);
+		System.out.println("product id of the product which has highest price"+" "+highestPid);
+		double totalAmount = calculateAmount(products);
+		System.out.println("total amount spent for all product is"+" "+totalAmount);
+	}
+	
+	public static int FindHighestPriceProductid(Product[] products) {
+		int highestPriceProductId =1;
+		double maxValue =0;
+		for(Product product :products) {
+			if(product.price> maxValue) {
+				maxValue =product.price;
+				highestPriceProductId = product.pId;
+			}
+		}
+		return highestPriceProductId;
+	}
+	
+	public static double calculateAmount(Product[] products) {
+		double amount =0.0;
+		for(Product product:products) {
+			amount += product.price *product.quantity;
+		}
+		return amount;
+	}
+}
